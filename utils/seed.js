@@ -10,8 +10,8 @@ connection.once('open', async () => {
 
   await Thought.deleteMany({});
 
-  let userOneThoughts = [];
-  let userTwoThoughts = [];
+  const userOneThoughts = [];
+  const userTwoThoughts = [];
 
   const thoughtOne =
   {
@@ -45,6 +45,9 @@ connection.once('open', async () => {
   userOneThoughts.push(thoughtOne, thoughtTwo);
 
   userTwoThoughts.push(thoughtThree, thoughtFour);
+
+  console.log(userOneThoughts);
+  console.log(userTwoThoughts);
 
   await Thought.collection.insertMany([thoughtOne, thoughtTwo, thoughtThree, thoughtFour]);
 
