@@ -1,4 +1,4 @@
-const { Thought, User, Reaction } = require('../models');
+const { Thought, User} = require('../models');
 
 module.exports = {
 //get all thoughts
@@ -36,12 +36,36 @@ module.exports = {
             { _id: req.params.thoughtId},
             
         )
-    }
+    },
 //delete thought by id
 
 //post reaction
-
+addReaction(req, res) {
+    Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
+        { $addToSet: { reactions: req.body } },
+        { new: true }
+    )
+    .then((thought) =>
+    !thought
+    ? res.status(404).json({ message: 'No thought with that ID' })
+    : res.json(thought)
+    )
+    .catch((err) => res.status(500).json(err));
+},
 //delete reaction
-
+removeReaction(req, res) {
+    Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
+        { $pull: { reaction: { reactionId: req.params.reactionId } } },
+        { new: true }
+    )
+    .then((thought) =>
+    !thought
+    ? res.status(404).json({ message: 'No thought with that ID' })
+    : res.json(thought)
+    )
+    .catch((err) => res.status(500).json(err));
+}
 }
 
