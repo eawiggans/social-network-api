@@ -15,7 +15,7 @@ connection.once('open', async () => {
 
   const thoughtOne =
   {
-    "_id": "1",
+    // "_id": "1",
     "thoughtText": "I ate a burrito for lunch",
     "userName": "userOne"
 
@@ -23,21 +23,21 @@ connection.once('open', async () => {
 
   const thoughtTwo = 
   {
-    "_id": "2",
+    // "_id": "2",
     "thoughtText": "Dogs and cats are both great",
     "userName": "userOne"
   };
 
   const thoughtThree =
   {
-    "_id": "3",
+    // "_id": "3",
     "thoughtText": "I am always behind on homework!",
     "userName": "userTwo"
   };
 
   const thoughtFour =
   {
-    "_id": "4",
+    // "_id": "4",
     "thoughtText": "Hopefully this new calendar I got will help",
     "userName": "userTwo"
   };

@@ -29,7 +29,7 @@ module.exports = {
         !user 
         ? res.status(404).json({ message: 'Thought created, but found no user with this ID'})
         : res.json('Created new thought for this user'));
-    }
+    },
 //update/put thought by id FINISH THIS
     updateThought(req, res) {
         Thought.findOneAndUpdate(

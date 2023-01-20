@@ -3,6 +3,10 @@ const reactionSchema = require('./Reaction')
 
 const thoughtSchema = new Schema(
     {
+        // _id: {
+        //     type: Schema.Types.ObjectId,
+        //     default: () => new Types.ObjectId(),
+        //   },
         thoughtText: String,
         createdAt: Date,
         username: String,
